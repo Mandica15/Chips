@@ -2,93 +2,100 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rentz Scoreboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f8f8f8;
-      padding: 20px;
+      padding: 10px;
+      margin: 0;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 20px;
-      font-size: 1.5em;
+      margin-bottom: 15px;
+      font-size: 6vw; /* responsive text */
     }
+
     .table-container {
       overflow-x: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      min-width: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      min-width: 600px; /* so it doesn't shrink too small */
     }
+
     th, td {
       border: 1px solid #ccc;
       padding: 8px;
       text-align: center;
+      font-size: 4vw;
     }
+
     th {
       background: #4CAF50;
       color: white;
       position: sticky;
       top: 0;
       z-index: 1;
-      font-size: 0.9em;
     }
+
     tr:nth-child(even) {
       background: #f2f2f2;
     }
+
     input[type="number"] {
-      width: 55px;
+      width: 50px;
       padding: 5px;
-      font-size: 0.9em;
+      text-align: center;
+      font-size: 4vw;
       border: 1px solid #aaa;
       border-radius: 4px;
     }
+
     select {
+      font-size: 4vw;
       width: 100%;
-      padding: 5px;
-      font-size: 0.9em;
     }
+
     .totals-row {
       font-weight: bold;
       background: #ddd;
     }
+
     button {
-      margin-top: 10px;
-      padding: 12px 20px;
-      font-size: 1em;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 15px auto 0;
+      padding: 12px;
+      font-size: 5vw;
       background: #4CAF50;
       color: white;
       border: none;
       cursor: pointer;
-      border-radius: 5px;
-      width: 100%;
+      border-radius: 6px;
     }
+
     button:hover {
       background: #45a049;
     }
 
-    /* Responsive tweaks */
-    @media(max-width: 600px) {
+    @media(min-width: 600px) {
+      th, td, input[type="number"], select {
+        font-size: 16px;
+      }
       h1 {
-        font-size: 1.3em;
-      }
-      th, td {
-        padding: 6px;
-        font-size: 0.8em;
-      }
-      input[type="number"] {
-        width: 45px;
-      }
-      select {
-        font-size: 0.8em;
+        font-size: 24px;
       }
       button {
-        font-size: 0.9em;
+        font-size: 18px;
       }
     }
   </style>
